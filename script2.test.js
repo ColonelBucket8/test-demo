@@ -12,6 +12,6 @@ it("calls api to get people with a promise", () => {
   expect.assertions(2);
   return api.getPeoplePromise(fetch).then((data) => {
     expect(data.count).toEqual(10);
-    expect(data.users.length).toBeGreaterThan(5);
+    expect(data.users).toContain("Leanne Graham");
   });
 });
