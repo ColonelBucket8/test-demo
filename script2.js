@@ -14,6 +14,7 @@ const getPeoplePromise = (fetch) => {
 const getPeople = async (fetch) => {
   const getRequest = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await getRequest.json();
+  console.log(data.map((user) => user.name));
   return {
     count: data.length,
     users: data.map((user) => user.name),
